@@ -1,3 +1,4 @@
+const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
@@ -5,28 +6,33 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist")
+  }/*,
+  devServer: {
+    contentBase: './',
+    inline: true,
+    watchContentBase: true,
+    port: 3000
+  }*/,
   resolve: {
-    extensions: ['.js','.jsx']
+    extensions: ['.js','.jsx','.css','.scss']
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
+          {loader: 'style-loader'},
           {loader: 'css-loader'},
-          {loader: 'postcss-loader'},
           {loader: 'sass-loader'}
         ]
       },
       {
         test: /\.css$/,
         use: [
-          {loader:'css-loader'},
-          {loader:'postcss-loader'}
+          'style-loader',
+          'css-loader'
         ]
       },
       {
@@ -46,7 +52,7 @@ module.exports = {
         {
           // browse to http://localhost:3000/ during development
           host: 'localhost',
-          port: 8080,
+          port: 3000,
           // proxy the Webpack Dev Server endpoint
           // (which should be serving on http://localhost:3100/)
           // through BrowserSync
@@ -56,7 +62,7 @@ module.exports = {
         {
           // prevent BrowserSync from reloading the page
           // and let Webpack Dev Server take care of this
-          reload: false
+          reload: true
         }
       )
   ]
