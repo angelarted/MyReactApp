@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 
 
-const Header = function(){
+const Header = ()=>{
 
 	return(
-		<header>This is my header</header>
+		<div className="header fixed clearfix">
+			<div className="container">
+				<a href="/" title="Bezzera Spare Parts Home" className="logo-header"></a>
+				<div className="header-title">
+					<h2>Spare Parts</h2>
+	   	    	</div>
+			</div>
+		</div>
 	);
 
 };

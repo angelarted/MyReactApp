@@ -1,15 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/style.scss';
-//import { Provider } from 'react-redux';
-//import { createStore, applyMiddleware } from 'redux';
+import ReactDOM, { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import reducers from './reducers';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import promise from 'redux-promise'; //caricare redux-promise da npm
 
+import style from './assets/styles/style.scss';
+
+//components
 import App from './components/app';
-import Header from './components/header';
-//import reducers from './reducers';
 
-//const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-ReactDOM.render(
-    <App />
-, document.querySelector('.header'));
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+render(
+	<Provider store={createStoreWithMiddleware(reducers)}>
+	    <BrowserRouter>
+	    	<App />
+	    </BrowserRouter>
+    </Provider>,
+	document.getElementById('app')
+); 

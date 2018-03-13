@@ -1,0 +1,87 @@
+.force-overflow{
+	height: 400px;
+    overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0;
+	float: none;
+	clear: both;
+
+	&::-webkit-scrollbar {
+		width: 26px;
+	    background-color: #b2b2b2;
+	    border: none;
+	}
+    &::-webkit-scrollbar-thumb {
+		border: 3px solid #b2b2b2;
+		background-color: white;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: #b2b2b2;
+		border: none;
+	}
+}
+
+.row{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	font-size: 12px;
+	margin: 0;
+	height: 40px;
+	align-items: center;
+	padding: 5px;
+	border-bottom: 1px solid #e3e3e3;
+
+	&.header-container{
+		background-color: $bg_grey;
+		color: white;
+		font-weight: bold;
+	}
+
+	.cell{
+		width: 23.4%;
+		&.codice{
+			width: 6%;
+		}
+		&.ragione{
+			width: 18%
+		}
+		&.numero{
+			width: 53%;
+		}
+	}
+
+	.buttons-container{
+		width: 6%;
+
+		>button{
+			float: left;
+			margin-right: 3px;
+			border-radius: 1px;
+			padding: 5px;
+		}
+	}
+}
+
+.popup-container{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,.3);
+	top: 0;
+	left: 0;
+
+	.popup-body{
+		width: 400px;
+		height: 200px;
+		background-color: white;
+		color: $bg_grey;
+		position: absolute;
+		transform: translate(-50%);
+		left: 50%;
+		top: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+}

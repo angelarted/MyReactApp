@@ -1,0 +1,123 @@
+&.tables{
+
+	.section-title{
+		margin-top: 50px;
+	    padding-bottom: 24px;
+	    margin-bottom: 0;
+	    border-bottom: 1px solid #b2b2b2;
+	    font-weight: 700;
+	    font-size: 38px;
+	}
+
+	.table-name-container{
+	    padding: 10px;
+	    border-bottom: 1px solid #b2b2b2;
+	    margin-bottom: 14px;
+	    clear: both;
+	    float: none;
+	    min-height: 50px;
+
+	    .input-field-container{
+	    	float: left;
+	    	margin-right: 10px;
+
+	    	label{
+	    		margin-bottom: 0;
+
+	    		.input-field{
+	    			margin-left: 10px;
+	    		}
+	    	}
+	    }
+	}
+
+	.slick-slider{
+
+		&:after{
+			content: '';
+			width: 100%;
+			height: 1px;
+			background: $bg_grey;
+			display: block;
+			margin-top: 14px;
+		}
+		
+		.slick-list{
+			width: 96%;
+			margin: 0 auto;
+
+			.slick-slide{
+				color: #999999;
+			    font-weight: 600;
+			    font-size: 27px;
+			    margin-right: 20px;
+			    margin-left: 20px;
+			}
+		}
+		
+		.slick-arrow{
+			background: #c21d38;
+	    	height: 100%;
+	    	border-radius: 0;
+	    	margin-top: 0;
+
+	    	&.slick-next{
+	    		right: 0;
+	    	}
+	    	&.slick-prev{
+	    		left: 0;
+	    	}
+		}
+	}
+	
+	.active-area-container{
+		&, .Droppable{
+			height: 450px;
+		}
+		.table-img-container{
+			height: 100%;background: red;
+
+			.position-dropped{
+				position: absolute;
+				background: white;
+				border: 1px solid black;
+				padding: 5px 10px;
+			}
+		}
+		.spare-parts-list-container{
+			//background: red;
+			height: 450px;
+			.row{
+				margin: 0;
+    			padding: 0;
+    			display: flex;
+			    width: 100%;
+			    height: 30px;
+			    font-size: 12px;
+			    justify-content: space-between;
+
+			    .cell{
+			    	text-align: left;
+				    padding: 10px 0;
+				    color: #353535;
+				    padding-right: 10px;
+				    word-break: break-word;
+
+				    &.position{
+				    	border: 1px solid red;
+				    	padding: 5px 10px;	
+				    }	
+				    &.cell-hover{
+				    	background: red;
+				    }		    
+				}
+			}
+   
+    /*display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;*/
+    
+		}
+	}
+}

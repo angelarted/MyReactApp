@@ -1,0 +1,42 @@
+.container{
+	h1{
+		padding-bottom: 20px;
+		border-bottom: 1px solid grey;
+		margin-bottom: 20px;
+	}
+
+	&.azienda{
+
+		.main-menu-container{
+			float: left;
+			width: 25%;
+		}
+
+		.main-content-container{
+			width: 75%;
+			float: left;
+
+			.product-item{
+				float: left;
+				margin-right: 30px; 
+
+				.image{
+					width: 160px;
+					height: 160px;
+				}
+
+				h5{
+					width: 160px;
+					text-align: center;
+					font-size: 24px;
+				}
+			}
+		}
+	}
+
+	&.admin{
+		@import 'purchases';
+	}
+
+	@import 'tables';
+}

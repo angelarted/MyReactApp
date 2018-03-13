@@ -1,0 +1,39 @@
+.header{
+	background: $bg-grey;
+	height: 70px;
+	width: 100%;
+	//margin-top: 10px; 
+
+	.container{
+		margin: 0 auto;
+		display: flex; 
+
+		.logo-header{ 
+			background-image: url('../images/logo-header.png');
+			background-size: 100%;
+			width: 240px;
+			height: 70px;
+			display: block;
+		}
+
+		.header-title {
+		    padding-left: 20px;
+		    margin-left: 10px;
+		    border-left: 2px solid #fdfdfd;
+		    margin-top: 0;
+		    height: 55px;
+
+		    h2 {
+			    font-family: "Open sans", sans-serif;
+			    font-weight: 700;
+			    font-size: 43px;
+			    color: #e0e0e0;
+			    margin: 0;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			    text-transform: uppercase;
+			}
+		}
+	}
+}
+
