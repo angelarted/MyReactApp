@@ -40,6 +40,7 @@
 
 	.cell{
 		width: 23.4%;
+
 		&.codice{
 			width: 6%;
 		}
@@ -83,5 +84,17 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+
+		.row{
+			border: none;
+			font-size: 16px;
+
+			button{
+				margin: 0 20px;
+				background-color: $bg_grey;
+				color: white;
+				padding: 4px 10px;
+			}
+		}
 	}
 }

@@ -21,7 +21,7 @@ class ArticlesList extends Component{
 			_.map(this.props.articles,article =>{
 				return (
 					<div className="article" key={article.id}>
-						<Link to={`/table/${article.id}`}>{article.name}, {article.year}</Link>
+						<Link to={`/azienda/table/${article.id}`}>{article.name}, {article.year}</Link>
 					</div>
 				)
 			})

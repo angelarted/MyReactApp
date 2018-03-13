@@ -74,8 +74,10 @@
 		&, .Droppable{
 			height: 450px;
 		}
+
 		.table-img-container{
-			height: 100%;background: red;
+			height: 100%;
+			border: 1px solid $red;
 
 			.position-dropped{
 				position: absolute;
@@ -112,11 +114,10 @@
 				    }		    
 				}
 			}
-   
-    /*display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;*/
+   			
+
+   			@import 'spare-list-azienda';
+    
     
 		}
 	}

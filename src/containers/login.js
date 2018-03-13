@@ -68,8 +68,10 @@ class Login extends Component {
 			let {email,password} = values;
 			if(email == 'azienda'){
 				this.props.history.push('/azienda')
-			}else{
+			}else if(email == 'admin'){
 				this.props.history.push('/purchases')
+			}else if(email == 'redattore'){
+				this.props.history.push('/table/1')
 			}
 		});//l'action creator 'submitLogin' è una prop adesso
 	}
