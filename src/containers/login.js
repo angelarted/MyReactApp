@@ -154,4 +154,5 @@ export default reduxForm({
 })(
 	connect(null,{submitLogin})(Login)
 );
-//questo pezzo di codice collega reduxForm al componente e infine il componente all'action creator
+//questo pezzo di codice collega reduxForm al componente 
+//e infine il componente all'action creator

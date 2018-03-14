@@ -10,10 +10,10 @@ export default function(state = {},action){
 			return _.mapKeys(action.payload.data.data,'id');
 			break;
 		case SINGLE_ARTICLE:
-			console.log('STATE DIRECT LOAD',state)
+			//console.log('STATE DIRECT LOAD',state)
 			const article = action.payload.data.data;
 			const newState = {...state}
-			console.log('SPREADED',newState)
+			//console.log('SPREADED',newState)
 			newState[article.id] = article;
 			
 			return newState;

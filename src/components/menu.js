@@ -3,7 +3,6 @@ import Accordion from './accordion';
 
 const Menu = ()=> {
 
-
 		return(
 			<div className="main-menu-container">
 				<Accordion />

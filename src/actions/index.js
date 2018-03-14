@@ -32,7 +32,7 @@ export function submitLogin(values, callback){
 }
 
 export function getProds(){
-
+	console.log(GET_PRODS)
 	const request = axios.get(`${ROOT_URL}prods`);
 
 	return{
@@ -43,7 +43,7 @@ export function getProds(){
 }
 
 export function getArticles(){
-
+	console.log(GET_ARTICLES)
 	const request = axios.get(`${ROOT_URL}articles`);
 
 	return{
@@ -94,7 +94,6 @@ export function viewPurchase(id){
 		payload: request
 	}
 }
-
 
 // l'helper che abbiamo aggiunto come middleware 'promise' (nella index.js globale) 
 // risolve immediatamente le promesse di qualsiasi chiamata asincrona all'interno dell'app.
