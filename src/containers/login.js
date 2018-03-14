@@ -73,7 +73,7 @@ class Login extends Component {
 			}else if(email == 'redattore'){
 				this.props.history.push('/table/1')
 			}
-		});//l'action creator 'submitLogin' è una prop adesso
+		});//l'action creator 'submitLogin' è una prop adesso | PERCHE'?
 	}
 
 	render(){

@@ -54,7 +54,7 @@ class Table extends Component{
 				<h1 className="section-title"><span>{myArticle.id}:</span> {myArticle.name}</h1>
 				
 				<SimpleSlider slides={slides} />
-				<SingleTableAzienda />
+				<SingleTableAzienda history={this.props.history} />
 			</div>
 		);
 	};

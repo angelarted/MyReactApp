@@ -14,6 +14,7 @@ export const SINGLE_ARTICLE = 'single_article';
 export const GET_PURCHASES = 'purchases_list';
 export const DELETE_PURCHASE = 'delete_purchase';
 export const SINGLE_PURCHASE = 'single-purchase';
+export const SEND_ORDER = 'send_order';
 
 const ROOT_URL = 'https://reqres.in/api/'; //sto usando questo simulatore di richieste REST disponibile online free: https://reqres.in
 const UNIQUE_KEY='?key=345tghjuu5';
@@ -94,6 +95,19 @@ export function viewPurchase(id){
 		payload: request
 	}
 }
+
+export function sendOrder(order){//order to be an object
+	console.log('PARAM',order);
+	const request = axios.post(`${PURCHASE_ROOT_URL}${UNIQUE_KEY}`,order)
+	.then(function(response){
+		//? go to the page desired
+	})
+
+	return {
+		type: SEND_ORDER,
+		payload: request
+	}
+} 
 
 // l'helper che abbiamo aggiunto come middleware 'promise' (nella index.js globale) 
 // risolve immediatamente le promesse di qualsiasi chiamata asincrona all'interno dell'app.

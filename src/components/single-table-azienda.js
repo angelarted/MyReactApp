@@ -8,7 +8,7 @@ class SingleTable extends Component {
 
 	constructor(props){
 		super(props);
-
+		
 		this.state = {
 			bought : [],
 			hovering: false,
@@ -137,7 +137,8 @@ class SingleTable extends Component {
 				</div>
 				<div className="spare-parts-list-container col-xs-5 azienda">
 					<SparesListAzienda list={this.state.list} 
-					callbackOnAdd={(number,id)=>this.onChildChanged(number,id)} />
+					callbackOnAdd={(number,id)=>this.onChildChanged(number,id)}
+					history={this.props.history} />
 				</div>
 			</div>
 		)

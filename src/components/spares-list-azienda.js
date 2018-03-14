@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import ReactDOM, { render } from 'react-dom';
 import { Field, reduxForm } from 'redux-form'; 
 import update from 'immutability-helper';
+import { sendOrder } from '../actions';
+import { connect } from 'react-redux'
 
 class SparesList extends Component {
 
 	constructor(props){
 		super(props);
+		console.log('P',props)
 
 		this.state={
 			list : this.props.list
@@ -58,7 +61,6 @@ class SparesList extends Component {
 							   onChange={this.onNumberChange}
 							   key={id}
 						/>
-						{quantity}
 						<button className="fa fa-plus" />
 					</div>
 					<div className="cell price">{price}</div>
@@ -68,10 +70,28 @@ class SparesList extends Component {
 		});
 	}
 
-	render(){
+	onSendOrder(values){
+		console.log('onSendOrder',values);
+		values.content='products: '+JSON.stringify(values);
+		values.categories='pinco pallino';
+		values.title='post generato da web';
 
+		// qui va la chiamata axios all'action creator che ancora non ho scritto 
+		// di sendPurchase con parametri {id,title,categories,content}
+		this.props.sendOrder(values)
+		//.then(()=>{
+			this.props.history.push('/purchases');
+		//})
+		//history qui non c'è perchè il componente
+		//passato nella Route è il parent TableAzienda
+
+		
+	}
+
+	render(){
+		const { handleSubmit } = this.props;
 		return(
-			<form> 
+			<form onSubmit={handleSubmit(this.onSendOrder.bind(this))}> 
 				{this.renderList(this.props.list)}
 				<button type="submit" className="big-button">ACQUISTA</button>
 			</form>
@@ -82,4 +102,4 @@ class SparesList extends Component {
 
 export default reduxForm({
 	form: 'PartsBuyForm' //può essere qualsiasi nome, basta che è univoco
-})(SparesList);
+})(connect(null,{sendOrder})(SparesList));

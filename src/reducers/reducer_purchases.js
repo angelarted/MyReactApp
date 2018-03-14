@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import { GET_PURCHASES } from '../actions';
 import { DELETE_PURCHASE } from '../actions';
-import { SINGLE_PURCHASE } from '../actions'
+import { SINGLE_PURCHASE } from '../actions';
+import { SEND_ORDER } from '../actions';
 import update from 'immutability-helper';
 
 // quindi se non sbagliio tutti i reducer di questo file producono come risultato il 
@@ -37,6 +38,10 @@ export default function(state={},action){
 			purchases[action.payload.data.id] = singlePurchase;
 			//console.log('STATE DOPO',state)
 			return purchases;  
+ 		break;
+ 		case SEND_ORDER:
+ 			console.log(action.payload)
+ 			return state
  		break;
 		default:
 			return state
